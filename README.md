@@ -1,4 +1,4 @@
 # learning-python
 
-Content:
+Tartalom:
 - flask-base-app
