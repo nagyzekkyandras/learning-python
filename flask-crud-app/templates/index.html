@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page Title</title>
+</head>
+ <body>
+ <h1>Hello World!</h1>
+ <p>This is a paragraph.</p>
+ <img src={{url_for('static',filename="picture.jpeg")}} height="250" width="250" />
+ <br/>
+ <ul>
+ {% for fruit in fruits %}
+     <li>{{ fruit }}</li>
+ {% endfor %}
+ </ul>
+ {% if 'Kiwi' in fruits %}
+    <p>Kiwi in the list.</p>
+ {% else %}
+   <p>Kiwi not in the list.</p>
+ {% endif %}
+ </body>
+</html>
