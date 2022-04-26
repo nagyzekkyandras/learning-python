@@ -1,5 +1,5 @@
 from unittest import result
-from flask import Flask, redirect, render_template
+from flask import Flask, redirect, render_template, request
 from flask_bootstrap import Bootstrap
 from flask_mysqldb import MySQL
 import yaml
@@ -48,7 +48,6 @@ def mysqlinsert():
     mysql.connection.commit()
     return redirect('/mysqlselect')
 
-# insert 2
 @app.route('/mysqlselect2')
 def mysqlselect2():
     cur = mysql.connection.cursor()
@@ -57,6 +56,16 @@ def mysqlselect2():
         users = cur.fetchall()
         print(users) # log-ba is jelenjen meg
     return str(users)
+
+@app.route('/form', methods=['GET', 'POST'])
+def form():
+    if request.method == 'POST':
+        return request.form['password']
+    return render_template('form.html')
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return 'This page was not found!'
 
 if __name__ == '__main__':
     app.run(debug=False, port=5000)
