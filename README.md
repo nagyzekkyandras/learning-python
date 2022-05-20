@@ -1,4 +1,5 @@
 # learning-python
 
 Tartalom:
-- flask-base-app
+- cli scriptek
+- flask appok

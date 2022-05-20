@@ -1,0 +1,15 @@
+pfsense01 192.168.1.1 -
+pfsense02 192.168.1.2 -
+proxmox01 192.168.1.11 -
+proxmox02 192.168.1.12 -
+proxmox03 192.168.1.13 -
+proxmox04 192.168.1.14 -
+javaapp01 192.168.1.101 proxmox01
+javaapp02 192.168.1.102 proxmox03
+javaapp03 192.168.1.103 proxmox04
+nodeapp01 192.168.1.104 proxmox02
+mysql57 192.168.1.200 proxmox01
+mysql8 192.168.1.201 proxmox04
+app01 192.168.1.50 proxmox04
+backup 192.168.1.10 -
+autmate 192.168.1.60 proxmox01
