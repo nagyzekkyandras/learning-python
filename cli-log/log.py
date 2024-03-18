@@ -19,3 +19,9 @@ logger.info('This is an info message')
 logger.warning('This is a warning message')
 logger.error('This is an error message')
 logger.critical('This is a critical message')
+
+def main() -> None:
+    logger.info("This script is running: " + os.path.basename(__file__))
+
+if __name__ == '__main__':
+    main()
