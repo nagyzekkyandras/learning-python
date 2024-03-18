@@ -1,15 +1,21 @@
-#!/usr/bin/python
-
 import logging
+import os
+import sys
 
-def do_something():
-    logging.info('Doing something')
+# Get log level from environment variable, defaulting to DEBUG
+log_level = os.environ.get('LOG_LEVEL', 'DEBUG').upper()
 
-def main():
-    logging.basicConfig(filename='myapp.log', level=logging.INFO)
-    logging.info('Started')
-    do_something()
-    logging.info('Finished')
+# Configure logging
+logging.basicConfig(level=log_level,
+                    format='%(asctime)s - %(levelname)s - %(message)s',
+                    stream=sys.stdout) # or specific file
 
-if __name__ == '__main__':
-    main()
+# Create a logger
+logger = logging.getLogger()
+
+# Log messages
+logger.debug('This is a debug message')
+logger.info('This is an info message')
+logger.warning('This is a warning message')
+logger.error('This is an error message')
+logger.critical('This is a critical message')
